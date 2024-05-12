@@ -1,0 +1,34 @@
+<div class="main_component" *ngIf="loading">
+    <span class="flex">
+        <mat-spinner></mat-spinner>
+        <br>
+        <p>Hamarosan átirányítunk...</p>
+    </span>
+</div>
+<div class="main_component" *ngIf="notloading">
+  <h1>Regisztráció</h1>
+    <h4>Minden mező kitöltése kötelező!</h4>
+  <form [formGroup]="signupForm">
+    <mat-form-field>
+      <mat-label for="email">Email:</mat-label>
+      <input matInput type="text" formControlName="email"/>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="password">Password:</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label for="rePassword">Confirm Password:</mat-label>
+      <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="rePassword">
+      <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide2">
+        <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+    <span class="buttons">
+        <button mat-raised-button color="primary" type="submit" (click)="onSubmit()">Regisztráció</button>
+    </span>
+  </form>
+</div>

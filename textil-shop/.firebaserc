@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "webkert-2024-3bc99": {
+      "hosting": {
+        "textil-shop": [
+          "webkert-2024-textil"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "webkert-2024-3bc99"
+  }
+}

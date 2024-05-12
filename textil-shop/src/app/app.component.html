@@ -1,0 +1,51 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/login" (click)="close(sidenav)" *ngIf="!userActive">
+        <mat-icon>login</mat-icon>
+        <span>Bejelentkezés</span>
+      </a>
+      <a mat-list-item routerLink="/register" (click)="close(sidenav)" *ngIf="!userActive">
+        <mat-icon>app_registration</mat-icon>
+        <span>Regisztráció</span>
+      </a>
+      <a mat-list-item routerLink="/main" (click)="close(sidenav)" *ngIf="userActive">
+        <mat-icon>shopping_bag</mat-icon>
+        <span>Textilek</span>
+      </a>
+      <a mat-list-item routerLink="/profile" (click)="close(sidenav)" *ngIf="userActive">
+        <mat-icon>person</mat-icon>
+        <span>Profil</span>
+      </a>
+      <a mat-list-item routerLink="/about" (click)="close(sidenav)">
+        <mat-icon>call</mat-icon>
+        <span>Információk</span>
+      </a>
+      <a mat-list-item routerLink="/login" (click)="close(sidenav,true)" *ngIf="userActive">
+        <mat-icon>logout</mat-icon>
+        <span>Kijelentkezés</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div class="hamburger-menu-wrapper">
+        <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>Textil Webshop</div>
+      <div class="navigation-wrapper">
+        <ul class="nav-item">
+          <li><a *ngIf="!(userActive)" routerLink="login" class="menu-item">Bejelentkezés</a></li>
+          <li><a *ngIf="!(userActive)" routerLink="register" class="menu-item">Regisztráció</a></li>
+          <li><a *ngIf="(userActive)" routerLink="main" class="menu-item">Textilek</a></li>
+          <li><a *ngIf="(userActive)" routerLink="profile" class="menu-item" >Profil</a></li>
+          <li><a routerLink="about" class="menu-item">Információk</a></li>
+          <li><a *ngIf="(userActive)" routerLink="login" class="menu-item" (click)="logout()">Kijelentkezés</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

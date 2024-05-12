@@ -1,0 +1,32 @@
+<div class="main_component">
+    <div>
+      <mat-form-field>
+        <mat-label for="sortDirection">Termékár:</mat-label>
+        <mat-select [(ngModel)]="sortDirection">
+          <mat-option value="asc">Növekvő</mat-option>
+          <mat-option value="desc">Csökkenő</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label for="limit">Termékszám:</mat-label>
+        <mat-select [(ngModel)]="limit">
+          <mat-option value="1">1 db</mat-option>
+          <mat-option value="10">Összes</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div><button class="gomb" mat-raised-button color="primary" (click)="sorting()" (click)="openSnackBar()">Rendezés</button></div>
+    </div>
+  <div class="items">
+      <mat-card class="product-list-container" *ngFor="let textil of sortedtextils;">
+        <mat-card-content class="product-card">
+          <img src="{{textil.textilImg}}">
+          <div class="flex">
+            <h3 class="product-title">{{textil.textilType}}</h3>
+            <p class="product-description">{{textil.textilDscp}}</p>
+          </div>
+        </mat-card-content>
+        <p class="product-price">{{String(textil.textilPrice) | price}}</p>
+        <div><button class="gomb" mat-raised-button color="primary">Kosárba</button></div>
+      </mat-card>
+  </div>
+</div>

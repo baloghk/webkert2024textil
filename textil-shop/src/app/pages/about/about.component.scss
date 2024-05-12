@@ -1,0 +1,24 @@
+div {
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  padding-top: 50px;
+}
+
+.main_component{
+  height: 89vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card{
+  width: 350px;
+}
+
+
+@media screen and (max-width: 576px) {
+  mat-card{
+    width: fit-content;
+  }
+}

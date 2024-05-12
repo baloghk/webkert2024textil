@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "textil-shop",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+.main_component{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 94vh;
+  font-size: 25px;
+  align-items: center;
+}
+
+form{
+  display: inline-grid;
+  align-self: center;
+  width: 75%;
+  max-width: 500px;
+}
+
+button{
+  font-size: 20px;
+  padding: 15px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  font-size: medium;
+}

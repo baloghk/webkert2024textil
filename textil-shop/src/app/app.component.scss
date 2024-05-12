@@ -1,0 +1,35 @@
+.menu-item {
+  text-decoration: none;
+  color: white;
+  padding-left: 20px;
+}
+
+a:hover, a:active{
+  color: lightgrey;
+}
+
+.nav-item{
+  list-style: none;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.bodytext{
+  text-align: center;
+  margin: 50px;
+  font-size: 30pt;
+  text-decoration: double;
+}
+
+@media screen and (max-width: 576px) {
+  .nav-item {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .hamburger-menu-wrapper {
+    display: none;
+  }
+}
